@@ -111,7 +111,7 @@ const items: MenuItem[] = [
 
 function Menu() {
   return (
-    <div className="w-[70px] bg-base-200 h-screen flex flex-col items-center justify-between">
+    <div className="w-[70px] hidden bg-base-200 h-screen sm:flex flex-col items-center justify-between">
       <div className="flex flex-col items-center">
         <div className="logo my-5">
           <span className="text-2xl font-bold text-primary">DR</span>
