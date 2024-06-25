@@ -8,6 +8,14 @@ interface CardProps {
   description?: string;
 }
 
+const CardInfo = {
+  title: "Audience",
+  badge: "New",
+  value: "1,818",
+  percentage: -0.02,
+  description: "vs last month",
+};
+
 function Card({ title, badge, value, percentage, description }: CardProps) {
   return (
     <div className="card bg-base-100 w-96 border-[1px] border-l-gray-50" data-theme="light">
