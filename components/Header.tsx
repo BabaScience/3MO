@@ -196,7 +196,7 @@ function Header({ title }: HeaderProps) {
           </div>
           <button 
             ref={searchButtonRef} 
-            className="btn btn-ghost btn-circle hidden"
+            className="btn btn-ghost btn-circle hidden sm:block"
             onClick={handleOpenSearch}
           >
             <svg
