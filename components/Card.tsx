@@ -10,7 +10,7 @@ interface CardProps {
 
 function Card({ title, badge, value, percentage, description }: CardProps) {
   return (
-    <div className="card bg-base-100 w-96 shadow-xl" data-theme="light">
+    <div className="card bg-base-100 w-96 border-[1px] border-l-gray-50" data-theme="light">
       <div className="card-body p-4">
         <h2 className="card-title mb-2 text-md">
           {title || "No Title"}
