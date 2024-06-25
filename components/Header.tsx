@@ -117,6 +117,8 @@ const items: MenuItem[] = [
 function Header({ title }: HeaderProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const searchButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileSearchButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDialogElement>(null);
 
   const handleOpenSearch = () => {
     // inputRef.current?.classList
@@ -124,6 +126,10 @@ function Header({ title }: HeaderProps) {
     searchButtonRef.current?.classList.toggle("hidden");
     inputRef.current?.focus();
   };
+
+  const handleOpenModal = () => {
+    modalRef.current?.showModal();
+  }
 
   const handleSearch = (event) => {
     console.log(event.target.value)
@@ -190,8 +196,29 @@ function Header({ title }: HeaderProps) {
           </div>
           <button 
             ref={searchButtonRef} 
-            className="btn btn-ghost btn-circle"
+            className="btn btn-ghost btn-circle hidden"
             onClick={handleOpenSearch}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+          {/* Mobile Search Button */}
+          <button 
+            ref={mobileSearchButtonRef} 
+            className="btn btn-ghost btn-circle sm:hidden"
+            onClick={handleOpenModal}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -240,6 +267,31 @@ function Header({ title }: HeaderProps) {
             </li>
           </ul>
         </div>
+        {/* Modal */}
+        <dialog ref={modalRef} id="my_modal_1" className="modal">
+          <div className="modal-box">
+            {/* Header */}
+            <span>
+              <h2 className="text-lg font-bold">Search</h2>
+            </span>
+            <div className="form-control">
+              <input
+                type="text"
+                placeholder="Search"
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div className="modal-action">
+              <button className="btn btn-primary">Search</button>
+              <button
+                className="btn"
+                onClick={() => modalRef.current?.close()}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </dialog>
       </div>
     </div>
   );
