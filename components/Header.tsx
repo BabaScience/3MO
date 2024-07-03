@@ -141,7 +141,7 @@ function Header({ title }: HeaderProps) {
   };
 
   return (
-    <div className="navbar bg-base-100 border " data-theme="light">
+    <div className="navbar bg-base-100 border sticky " data-theme="light">
       <div className="flex-1">
       <div className="drawer w-auto mr-3 sm:hidden">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />

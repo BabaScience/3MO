@@ -1,4 +1,10 @@
+'use client'
 import React from 'react'
+import dynamic from 'next/dynamic';
+
+// const Map = dynamic(() => import('./Map'), { ssr: false });
+// import Map from './Map';
+
 
 const countryStats = [
   {
@@ -37,8 +43,8 @@ function CardLarge() {
         {/* Card Content */}
         <div className='card sm:card-side'>
           {/* Left */}
-          <div className='w-full sm:w-3/5 h-[300px] sm:h-[500px] bg-slate-300 flex items-center justify-center'>
-            <h1>map</h1>
+          <div className='w-full sm:w-3/5 h-[300px] sm:h-[400px] bg-slate-300 flex items-center justify-center'>
+            Map
           </div>
           {/* Right */}
           <div className="card-body">
